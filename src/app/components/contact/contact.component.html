@@ -1,0 +1,38 @@
+<div
+    class="relative isolate min-h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 bg-hero-pattern bg-cover bg-no-repeat bg-center bg-blend-exclusion">
+    <app-header></app-header>
+    <div class="w-full flex flex-col items-center justify-center gap-5 lg:px-28 px-8 dark:text-gray-100 text-gray-800">
+        <h3 class="font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]" data-aos="fade-up">Contact.</h3>
+        <form class="flex flex-col gap-4" #emailForm (ngSubmit)="sendEmail(emailForm)" data-aos="fade-up">
+            <div class="md:flex items-center mt-2">
+                <div class="md:w-72 flex flex-col mt-2">
+                    <label class="text-base font-semibold leading-none">Name</label>
+                    <input tabindex="0" aria-label="Please input name" type="text"
+                        class="text-base leading-none text-gray-900 p-3 mt-4 border rounded border-gray-200 dark:border-gray-800 placeholder-gray-400 bg-transparent focus:bg-gray-50 dark:focus:bg-gray-950 dark:text-gray-50 dark:placeholder-gray-700 outline-none focus:border-transparent focus:ring-0"
+                        placeholder="Please input name" name="name" />
+                </div>
+                <div class="md:w-72 flex flex-col md:ml-6 mt-2">
+                    <label class="text-base font-semibold leading-none">Email Address</label>
+                    <input tabindex="0" aria-label="Please input email address" type="email"
+                        class="text-base leading-none text-gray-900 p-3 mt-4 border rounded border-gray-200 dark:border-gray-800 placeholder-gray-400 bg-transparent focus:bg-gray-50 dark:focus:bg-gray-950 dark:text-gray-50 dark:placeholder-gray-700 outline-none focus:border-transparent focus:ring-0"
+                        placeholder="Please input email address" name="email" />
+                </div>
+            </div>
+            <div>
+                <div class="w-full flex flex-col">
+                    <label class="text-base font-semibold leading-none">Message</label>
+                    <textarea tabindex="0" aria-label="leave a message" role="textbox" type="text"
+                        class="h-36 text-base leading-none text-gray-900 p-3 mt-4 border rounded border-gray-200 dark:border-gray-800 placeholder-gray-400 resize-none bg-transparent focus:bg-gray-50 dark:focus:bg-gray-950 dark:text-gray-50 dark:placeholder-gray-700 outline-none focus:border-transparent focus:ring-0"
+                        placeholder="Leave a message" name="message"></textarea>
+                </div>
+            </div>
+            <p class="text-xs text-gray-500">By clicking submit you agree to our terms of service,
+                privacy policy and how we use data as stated</p>
+            <div class="flex items-center justify-center w-full">
+                <button
+                    class="sm:mt-6 mt-3 text-white bg-gradient-to-r from-[#2EABB5] to-[#46938A] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-[#358691] dark:focus:ring-[#40847b] font-medium rounded-xl text-sm px-6 py-4 text-center mr-2 mb-2">Send
+                    Message</button>
+            </div>
+        </form>
+    </div>
+</div>

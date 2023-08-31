@@ -1,0 +1,24 @@
+<div
+    class="bg-gradient-to-br from-opacity-10 to-transparent backdrop-blur-2xl border border-gray-200 rounded-2xl shadow dark:border-gray-700 p-5 sm:w-[360px] w-full">
+    <div class="relative w-full h-[230px]">
+        <img src="{{ image }}" alt="project_image" class="w-full h-full object-cover rounded-2xl" />
+        <div class="absolute inset-0 flex justify-end m-3">
+            <div (click)="openSourceCodeLink()"
+                class="black-gradient w-8 h-8 mx-1 rounded-full flex justify-center items-center cursor-pointer hover:transform hover:scale-125 transition-transform duration-200">
+                <i class="fa-brands fa-github text-white"></i>
+            </div>
+            <div (click)="openHostLink()"
+                class="black-gradient w-8 h-8 mx-1 rounded-full flex justify-center items-center cursor-pointer hover:transform hover:scale-125 transition-transform duration-200">
+                <i class="fa-solid fa-link text-white"></i>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5">
+        <h3 class="font-bold text-24">{{ name }}</h3>
+        <p class="mt-2 text-secondary text-14">{{ description }}</p>
+    </div>
+
+    <div class="mt-4 flex flex-wrap gap-2">
+        <p *ngFor="let tag of tags" [ngClass]="tag.color" class="text-14">#{{ tag.name }}</p>
+    </div>
+</div>

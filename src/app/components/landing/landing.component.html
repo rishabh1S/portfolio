@@ -1,0 +1,50 @@
+<div
+    class="relative isolate h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 bg-hero-pattern bg-cover bg-no-repeat bg-center bg-blend-exclusion">
+    <app-header></app-header>
+    <section class="relative">
+        <div
+            class="mt-10 sm:mt-0 grid gap-7 sm:grid-cols-[0.2fr,1.6fr,1.2fr] grid-cols-[0.4fr,2.6fr,0fr] grid-template-row sm:px-16 px-6">
+            <div id="socials" class="w-1/4 flex flex-col justify-center space-y-8 text-gray-800 dark:text-gray-100">
+                <a class="hover:transform hover:scale-125 transition-transform duration-200"
+                    href="https://www.linkedin.com/in/rishabh-singh-b726aa211/" target="_blank">
+                    <i class="fa-brands fa-linkedin-in fa-xl"></i>
+                </a>
+                <a class="hover:transform hover:scale-125 transition-transform duration-200"
+                    href="https://github.com/SinghRishabh19" target="_blank">
+                    <i class="fa-brands fa-github fa-xl"></i>
+                </a>
+                <a class="hover:transform hover:scale-125 transition-transform duration-200"
+                    href="https://www.instagram.com/singh_rishabh19/?hl=en" target="_blank">
+                    <i class="fa-brands fa-instagram fa-xl"></i>
+                </a>
+                <a class="hover:transform hover:scale-125 transition-transform duration-200"
+                    href="https://twitter.com/RishabhSingh989" target="_blank">
+                    <i class="fa-brands fa-x-twitter fa-xl"></i>
+                </a>
+                <a class="hover:transform hover:scale-125 transition-transform duration-200"
+                    href="https://stackoverflow.com/users/18567703/rishabh-singh?tab=profile" target="_blank">
+                    <i class="fa-brands fa-stack-overflow fa-xl"></i>
+                </a>
+                <a class="hover:transform hover:scale-125 transition-transform duration-200"
+                    href="https://www.hackerrank.com/rishabh15112001" target="_blank">
+                    <i class="fa-brands fa-hackerrank fa-xl"></i>
+                </a>
+            </div>
+            <div class="flex flex-col justify-center">
+                <div
+                    class="text-gray-800 dark:text-white font-black sm:text-[80px] text-[60px] sm:leading-[100px] leading-[70px]">
+                    <h1 id="heading">Hi, I'm <span class="gradient-font">Rishabh</span></h1>
+                    <p id="sub-heading" class="mt-2 font-medium text-[24px] leading-[30px]">
+                        Passionate Full Stack Developer with a knack for crafting exceptional front-end
+                        experiences.
+                    </p>
+                    <button routerLink="/contact" id="cta"
+                        class="text-white bg-gradient-to-r from-[#2EABB5] to-[#46938A] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-[#358691] dark:focus:ring-[#40847b] font-medium rounded-xl text-sm px-6 py-4 text-center mr-2 mb-2">
+                        Contact Me
+                    </button>
+                </div>
+            </div>
+            <canvas #canvas3d class="hidden sm:block z-50"></canvas>
+        </div>
+    </section>
+</div>
