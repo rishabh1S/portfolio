@@ -18,37 +18,37 @@ export class LandingComponent implements AfterViewInit {
   }
 
   animate() {
-    TweenMax.from(this.canvas.nativeElement, 1, {
-      opacity: 0,
-      delay: 0.1,
-      ease: Expo.easeInOut,
-    });
-
     TweenMax.from('#heading', 1, {
       opacity: 0,
-      delay: 0.6,
+      delay: 0.5,
       y: 40,
       ease: Expo.easeInOut,
     });
 
     TweenMax.from('#sub-heading', 1, {
       opacity: 0,
-      delay: 0.9,
+      delay: 0.7,
       y: 40,
       ease: Expo.easeInOut,
     });
 
     TweenMax.from('#cta', 1, {
       opacity: 0,
-      delay: 1.2,
+      delay: 1,
       y: 40,
       ease: Expo.easeInOut,
     });
 
     TweenMax.from('#socials', 2, {
       opacity: 0,
-      delay: 1.2,
+      delay: 1,
       y: -40,
+      ease: Expo.easeInOut,
+    });
+
+    TweenMax.from(this.canvas.nativeElement, 1, {
+      opacity: 0,
+      delay: 1.7,
       ease: Expo.easeInOut,
     });
   }

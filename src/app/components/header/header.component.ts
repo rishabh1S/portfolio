@@ -45,13 +45,13 @@ export class HeaderComponent implements AfterViewInit {
   animate() {
     TweenMax.from('#logo', 1, {
       opacity: 0,
-      x: -30,
+      y: 30,
       ease: Expo.easeInOut,
     });
 
     TweenMax.staggerFrom('#navbar-default ul li', 1, {
       opacity: 0,
-      x: -30,
+      y: 30,
       ease: Power3.easeInOut,
     });
   }

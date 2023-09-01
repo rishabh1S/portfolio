@@ -25,11 +25,6 @@ export class CustomCursorComponent implements OnInit {
     });
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event): void {
-    // Handle window resize if needed
-  }
-
   onMouseMove(event: MouseEvent): void {
     const posX = event.clientX;
     const posY = event.clientY;
