@@ -1,5 +1,5 @@
 <div
-    class="relative isolate min-h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 bg-hero-pattern bg-cover bg-no-repeat bg-center bg-blend-exclusion">
+    class="relative isolate h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 bg-hero-pattern bg-cover bg-no-repeat bg-center bg-blend-exclusion">
     <app-header></app-header>
     <div class="w-full flex flex-col items-center justify-center gap-5 lg:px-28 px-8 dark:text-gray-100 text-gray-800">
         <h3 class="font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]" data-aos="fade-up">Contact.</h3>
@@ -12,10 +12,13 @@
                         placeholder="Please input name" name="name" />
                 </div>
                 <div class="md:w-72 flex flex-col md:ml-6 mt-2">
-                    <label class="text-base font-semibold leading-none">Email Address</label>
+                    <label class="text-base font-semibold leading-none">Email Address <span
+                            class="text-red-500 text-base leading-none">*</span></label>
                     <input tabindex="0" aria-label="Please input email address" type="email"
                         class="text-base leading-none text-gray-900 p-3 mt-4 border rounded border-gray-200 dark:border-gray-800 placeholder-gray-400 bg-transparent focus:bg-gray-50 dark:focus:bg-gray-950 dark:text-gray-50 dark:placeholder-gray-700 outline-none focus:border-transparent focus:ring-0"
-                        placeholder="Please input email address" name="email" />
+                        placeholder="Please input email address" name="email" [(ngModel)]="email" required
+                        #emailInput="ngModel" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+                        [ngClass]="{ 'ring-1 ring-red-500': emailInput.invalid && emailInput.touched }" />
                 </div>
             </div>
             <div>
@@ -34,5 +37,38 @@
                     Message</button>
             </div>
         </form>
+    </div>
+    <div class="absolute inset-x-0 top-20 flex flex-col items-center justify-center">
+        <!-- Success Toast -->
+        <div #successToast id="toast-success" [style.display]="'none'"
+            class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+            role="alert">
+            <div
+                class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                    viewBox="0 0 20 20">
+                    <path
+                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="sr-only">Check icon</span>
+            </div>
+            <div class="ml-3 text-sm font-normal">Successfull submission.</div>
+        </div>
+
+        <!-- Error Toast -->
+        <div #errorToast id="toast-danger" [style.display]="'none'"
+            class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+            role="alert">
+            <div
+                class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 bg-red-100 rounded-lg dark:bg-red-800 dark:text-red-200">
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                    viewBox="0 0 20 20">
+                    <path
+                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z" />
+                </svg>
+                <span class="sr-only">Error icon</span>
+            </div>
+            <div class="ml-3 text-sm font-normal">Something went wrong.</div>
+        </div>
     </div>
 </div>

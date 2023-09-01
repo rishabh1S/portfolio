@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { environment } from 'src/environments/environment';
 
@@ -12,17 +12,49 @@ export class ContactComponent {
   templateId: string = environment.TEMPLATE_ID;
   publicKey: string = environment.PUBLIC_KEY;
 
+  email: string = '';
+
+  @ViewChild('successToast')
+  successToast!: ElementRef;
+  @ViewChild('errorToast')
+  errorToast!: ElementRef;
+
   public sendEmail(form: HTMLFormElement) {
-    emailjs
-      .sendForm(this.serviceId, this.templateId, form, this.publicKey)
-      .then(
-        (result: EmailJSResponseStatus) => {
-          console.log(result.text);
-          form.reset(); // Reset the form after successful submission
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    if (form.checkValidity() && this.email) {
+      emailjs
+        .sendForm(this.serviceId, this.templateId, form, this.publicKey)
+        .then(
+          (result: EmailJSResponseStatus) => {
+            console.log(result.text);
+            form.reset();
+            this.showSuccessToast();
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    }
+  }
+
+  showSuccessToast() {
+    if (this.successToast) {
+      const successToast = this.successToast.nativeElement;
+      successToast.style.display = 'flex';
+
+      setTimeout(() => {
+        successToast.style.display = 'none';
+      }, 3000);
+    }
+  }
+
+  showErrorToast() {
+    if (this.errorToast) {
+      const errorToast = this.errorToast.nativeElement;
+      errorToast.style.display = 'flex';
+
+      setTimeout(() => {
+        errorToast.style.display = 'none';
+      }, 3000);
+    }
   }
 }
