@@ -43,7 +43,7 @@ export class ContactComponent {
 
       setTimeout(() => {
         successToast.style.display = 'none';
-      }, 3000);
+      }, 5000);
     }
   }
 
@@ -54,7 +54,7 @@ export class ContactComponent {
 
       setTimeout(() => {
         errorToast.style.display = 'none';
-      }, 3000);
+      }, 5000);
     }
   }
 }
