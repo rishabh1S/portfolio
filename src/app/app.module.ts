@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -33,6 +34,7 @@ import { CustomCursorComponent } from './components/custom-cursor/custom-cursor.
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    PdfViewerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

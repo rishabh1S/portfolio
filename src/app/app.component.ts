@@ -7,7 +7,7 @@ import AOS from 'aos';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = 'portfolio-website';
+  title = 'Rishabh Singh';
   ngOnInit() {
     AOS.init({
       duration: 400,
